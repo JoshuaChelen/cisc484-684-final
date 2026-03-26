@@ -1,0 +1,5 @@
+Week 1:
+Created 3 scripts
+    01_download_verify.py: extracts data from zipped dataset and verifies no files are left out/corrupted
+    02_meta_data_to_binary_labels.py: takes unzipped data and adds a file path and binary (benign/malignant) label to the metadata csv
+    03_resize.py: resizes all images to 128x128

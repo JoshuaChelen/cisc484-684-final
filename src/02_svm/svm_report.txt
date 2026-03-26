@@ -1,0 +1,37 @@
+Week 1 Report:
+    01_explore_metadata: script created to explore metadata_labeled.csv
+    metadata insignts:
+        1. Dataset is clean
+        10,015 unique images, no corrupted files, no duplicate image IDs.
+        2. 57 missing age values
+        Not a blocker — age isn't used as a model feature, but should be noted.
+        3. Lesion leakage risk
+        1,956 lesions have multiple images. The train/test split in Week 2 must be done by lesion_id, not image_id, to prevent the same lesion appearing in both train and test.
+        4. No patient_id column
+        Can't check patient-level overlap directly — lesion ID split is the best available safeguard.
+        5. Class imbalance: ~4:1 benign to malignant
+
+        Benign: 8,061
+        Malignant: 1,954
+        SMOTE or class-weighted loss required before training.
+
+    Research and document HSV color histogram extraction approach for Phase 1 feature engineering
+        Here's what you need to know:
+What is HSV?
+HSV stands for Hue, Saturation, Value — it's an alternative color space to RGB that separates color (hue) from intensity (value). It's preferred over RGB for skin lesion analysis because:
+
+Hue captures the actual color of the lesion (reddish, brownish, bluish)
+Saturation captures how vivid vs washed out the color is
+Value captures brightness — useful for distinguishing dark melanomas
+
+What is a color histogram?
+    Instead of using raw pixel values (which would be 128×128×3 = 49,152 features per image), 
+    you bin the pixel values into buckets and count how many pixels fall in each bucket. 
+    For example with 16 bins per channel:
+        16 bins for H + 16 bins for S + 16 bins for V = 48 features per image
+    This is much more manageable for an SVM.
+    
+    Why is it good for skin lesions?
+        Color is one of the key clinical indicators dermatologists use — the "C" in the ABCDE rule 
+        (Asymmetry, Border, Color, Diameter, Evolution). Malignant lesions tend to have more color
+         variation and darker hues than benign ones.
