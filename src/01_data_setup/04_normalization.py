@@ -4,7 +4,7 @@ from PIL import Image
 
 #create paths
 INPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_resized")
-OUTPUT_DIR=os.path.join("..", "..", "data", "HAM1000_images_normalized")
+OUTPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_normalized")
 
 #create output directory
 os.makedirs(OUTPUT_DIR, exist_ok=True)

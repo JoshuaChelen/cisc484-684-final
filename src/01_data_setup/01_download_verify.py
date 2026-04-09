@@ -16,7 +16,7 @@ import zipfile
 from PIL import Image
 
 # ── Paths (relative to src/) ───────────────────────────────────────────────
-ZIP_PATH    = os.path.join("..", "..", "data", "skin-cancer-mnist-ham10000.zip")
+ZIP_PATH    = os.path.join("..", "..", "data", "/Users/gracegulick/Cisc Stuff/cisc484-684-final/src/01_data_setup/archive.zip")
 EXTRACT_DIR = os.path.join("..", "..", "data")
 IMG_DIR_1   = os.path.join("..", "..", "data", "HAM10000_images_part_1")
 IMG_DIR_2   = os.path.join("..", "..", "data", "HAM10000_images_part_2")
