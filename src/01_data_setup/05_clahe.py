@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 
 #paths
-INPUT_DIR  = "data/HAM10000_images_resized"
+INPUT_DIR  = "data/HAM10000_images_normalized"
 OUTPUT_DIR = "data/HAM10000_images_clahe"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
