@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 
 #paths
-INPUT_DIR  = "data/HAM10000_images_clahe"
-OUTPUT_DIR = "data/HAM10000_images_color_normalized"
+INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_clahe")
+OUTPUT_DIR = os.path.join("..", "..", "data", "HAM10000_images_color_normalized")
 
 # Choose one image in the folder as the reference image
 REFERENCE_IMAGE = "ISIC_0029836.jpg"
@@ -21,7 +21,7 @@ def match_cdf(source, reference):
     src_cdf/=src_cdf[-1]
     ref_cdf/=ref_cdf[-1]
 
-    table=np.zeros(256, dtype=np.unit8)
+    table=np.zeros(256, dtype=np.uint8)
     ref_i=0
     for src_i in range(256):
         while ref_i<255 and ref_cdf[ref_i]<src_cdf[src_i]:

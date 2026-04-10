@@ -4,9 +4,9 @@ import numpy as np
 import random
 
 #paths
-INPUT_DIR  = "data/HAM10000_images_color_normalized"
-#OUTPUT_DIR = "data/HAM10000_images_hair_removed"
-OUTPUT_DIR="data/test_20_hair_removed"
+INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_color_normalized")
+#OUTPUT_DIR = os.path.join("..", "..", "data", "HAM10000_images_hair_removed")
+OUTPUT_DIR=os.path.join("..", "..", "data","test_20_hair_removed" )
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -21,7 +21,7 @@ def remove_hair(image):
     #thresholding to create hair mask
     _, hair_mask=cv2.threshold(blackhat, 10, 255, cv2.THRESH_BINARY)
     #thickening mask
-    hair_mask=cv2.dilate(hair_mask, np.ones((3,3), np.unit8), iterations=1)
+    hair_mask=cv2.dilate(hair_mask, np.ones((3,3), np.uint8), iterations=1)
     #fill in mask 
     result=cv2.inpaint(image, hair_mask, 3, cv2.INPAINT_TELEA)
 
@@ -48,7 +48,7 @@ for fname in files:
         skipped += 1
         continue
 
-    image=cv2.imreaad(src_path)
+    image=cv2.imread(src_path)
 
     if image is None:
         print(f"Skipping unreadable file: {fname}")
