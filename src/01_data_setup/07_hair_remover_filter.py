@@ -1,10 +1,12 @@
 import os
 import cv2
 import numpy as np
+import random
 
 #paths
 INPUT_DIR  = "data/HAM10000_images_color_normalized"
-OUTPUT_DIR = "data/HAM10000_images_hair_removed"
+#OUTPUT_DIR = "data/HAM10000_images_hair_removed"
+OUTPUT_DIR="data/test_20_hair_removed"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -29,7 +31,14 @@ def remove_hair(image):
 total=0
 skipped=0
 
+#files = [f for f in os.listdir(INPUT_DIR) if f.endswith(".jpg")]
 files = [f for f in os.listdir(INPUT_DIR) if f.endswith(".jpg")]
+random.seed(42)
+files = random.sample(files, min(20, len(files)))
+
+print("Testing these files:")
+for f in files:
+    print(f)
 
 for fname in files:
     src_path = os.path.join(INPUT_DIR, fname)
