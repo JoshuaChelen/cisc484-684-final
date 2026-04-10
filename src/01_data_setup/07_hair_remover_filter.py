@@ -17,11 +17,10 @@ def remove_hair(image):
     gray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
     #using blackhat to highlight thin lines
-    kernel=cv2.getStructuringElement(cv2.MORPH_RECT, (9, 9))
+    kernel=cv2.getStructuringElement(cv2.MORPH_RECT, (5, 5))
     blackhat= cv2.morphologyEx(gray, cv2.MORPH_BLACKHAT, kernel)
     #thresholding to create hair mask
-    _, hair_mask=cv2.threshold(blackhat, 20, 255, cv2.THRESH_BINARY)
-    hair_mask=filter_thin_components(hair_mask, max_area=300)
+    _, hair_mask=cv2.threshold(blackhat, 40, 255, cv2.THRESH_BINARY)
     #thickening mask
     #hair_mask=cv2.dilate(hair_mask, np.ones((3,3), np.uint8), iterations=1)
     #fill in mask 
@@ -29,16 +28,6 @@ def remove_hair(image):
 
     return result, hair_mask
 
-def filter_thin_components(mask, max_area=300):
-    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(mask, connectivity=8)
-    filtered = np.zeros_like(mask)
-
-    for i in range(1, num_labels):  # skip background
-        area = stats[i, cv2.CC_STAT_AREA]
-        if area <= max_area:
-            filtered[labels == i] = 255
-
-    return filtered
 
 #process images
 total=0
