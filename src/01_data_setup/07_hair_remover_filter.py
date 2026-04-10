@@ -4,6 +4,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+
 #paths
 INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_color_normalized")
 #OUTPUT_DIR = os.path.join("..", "..", "data", "HAM10000_images_hair_removed")
@@ -12,7 +13,9 @@ OUTPUT_DIR=os.path.join("..", "..", "data","test_20_hair_removed" )
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
+
 def remove_hair(image):
+
     #convert to gray
     gray=cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -24,9 +27,11 @@ def remove_hair(image):
     #thickening mask
     #hair_mask=cv2.dilate(hair_mask, np.ones((3,3), np.uint8), iterations=1)
     #fill in mask 
-    result=cv2.inpaint(image, hair_mask, 3, cv2.INPAINT_TELEA)
+    result=cv2.inpaint(image, hair_mask, 1, cv2.INPAINT_TELEA)
 
     return result, hair_mask
+
+  
 
 
 #process images
