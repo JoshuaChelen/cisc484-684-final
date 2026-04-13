@@ -1,0 +1,1 @@
+Week 1: Developed class distribution plots, showing binary and seven category plots. Also made PCA projection.
