@@ -1,0 +1,8 @@
+Week 1: Developed class distribution plots, showing binary and seven category plots. Also made PCA projection.
+
+Week 2:
+- Added src/04_evaluation/02_edaplot.py to generate required deliverables from the shared project data pipeline.
+- Added consolidated preprocessing log at src/04_evaluation/preprocessing_shared_log.txt.
+
+Week 3 (Task deliverables completed):
+1)
