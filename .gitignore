@@ -1,3 +1,5 @@
 data/
 !.gitkeep
 *.zip
+HAM10000_data/
+.gitignore
