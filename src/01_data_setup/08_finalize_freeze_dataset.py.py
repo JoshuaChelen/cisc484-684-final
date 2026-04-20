@@ -7,8 +7,9 @@ from sklearn.model_selection import train_test_split
 PROCESSED_DIR = os.path.join("..", "..", "data", "HAM10000_images_normalized")
 LABELS_CSV = os.path.join("..", "..", "data", "metadata_labeled.csv")
 FINAL_DIR = os.path.join("..", "..", "data", "final_dataset")
+#Splits_DIR=os.path.join(FINAL_DIR, "splits")
 
-IMAGES_OUT = os.path.join(FINAL_DIR, "images_npy")
+IMAGES_OUT = os.path.join(FINAL_DIR, "images_npy") 
 os.makedirs(IMAGES_OUT, exist_ok=True)
 
 # load labels
