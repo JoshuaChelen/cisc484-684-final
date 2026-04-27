@@ -6,3 +6,6 @@ HAM10000_data/
 
 src/outputs/
 
+*.pth
+*.npy
+outputs/checkpoints/
