@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image
 
 #create paths
-INPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_resized")
+INPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_hair_removed")
 OUTPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_normalized")
 
 #create output directory
