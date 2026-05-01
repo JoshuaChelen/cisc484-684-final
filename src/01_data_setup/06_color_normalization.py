@@ -3,8 +3,8 @@ import cv2
 import numpy as np
 
 #paths
-INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_clahe")
-OUTPUT_DIR = os.path.join("..", "..", "data", "HAM10000_images_color_normalized")
+INPUT_DIR  = os.path.join("data", "HAM10000_images_clahe")
+OUTPUT_DIR = os.path.join("data", "HAM10000_images_color_normalized")
 
 # Choose one image in the folder as the reference image
 REFERENCE_IMAGE = "ISIC_0029836.jpg"

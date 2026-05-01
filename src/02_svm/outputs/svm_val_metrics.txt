@@ -1,0 +1,10 @@
+
+  ── Validation Metrics (Final SVM) ───────────────────
+     Precision      : 0.3000
+     Recall (Sens.) : 0.7474   ← PRIMARY METRIC
+     F1-Score       : 0.4282
+     ROC-AUC        : 0.6945
+  ── Confusion Matrix ─────────────────────────────────
+     TP=219  FP=511  TN=699  FN=74
+     False Negative Rate : 0.2526  ← missed cancers, minimize this!
+  ──────────────────────────────────────────────────────

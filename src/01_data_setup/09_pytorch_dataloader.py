@@ -5,7 +5,7 @@ import torch
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms
 
-FINAL_DIR=os.path.join("..", "..", "data", "final_dataset")
+FINAL_DIR=os.path.join("data", "final_dataset")
 SPLITS_DIR= os.path.join(FINAL_DIR, "splits")
 MANIFEST_PATH=os.path.join(FINAL_DIR, "manifest.json")
 
@@ -50,7 +50,7 @@ def build_loaders(batch_size=32, num_workers=0):
     
     train_dataset=HAM10000NPYDataset(
         manifest["splits"]["train"]["X"],
-        manifest["splits"],["train"]["y"],
+        manifest["splits"]["train"]["y"],
         transform=train_transform)
     
     val_dataset=HAM10000NPYDataset(
