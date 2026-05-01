@@ -9,7 +9,7 @@ spec=importlib.util.spec_from_file_location("pytorch_dataloader", SCRIPT_PATH)
 module=importlib.util.module_from_spec(spec)
 spec.loader.exec_module(module)
 
-build_dataloaders=module.build_dataloaders
+build_dataloaders=module.build_loaders
 
 #build train loader
 train_loader, _, _=build_dataloaders(batch_size=16, num_workers=0)

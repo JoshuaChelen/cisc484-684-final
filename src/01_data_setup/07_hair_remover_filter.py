@@ -6,9 +6,9 @@ import matplotlib.pyplot as plt
 
 
 #paths
-INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_color_normalized")
+INPUT_DIR  = os.path.join("data", "HAM10000_images_color_normalized")
 #OUTPUT_DIR = os.path.join("..", "..", "data", "HAM10000_images_hair_removed")
-OUTPUT_DIR=os.path.join("..", "..", "data","HAM10000_images_hair_removed" )
+OUTPUT_DIR=os.path.join("data","HAM10000_images_hair_removed" )
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
@@ -92,7 +92,7 @@ for fname in files:
         print(f"Skipping unreadable file: {fname}")
         continue
 
-    cleaned, mask=remove_hair(image)
+    cleaned=remove_hair(image)
     cv2.imwrite(dst_path, cleaned)
 
     total+=1

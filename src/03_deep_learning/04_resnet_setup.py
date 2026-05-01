@@ -16,7 +16,7 @@ from PIL import Image
 # CONFIGURATION
 # ─────────────────────────────────────────────
 
-IMAGE_DIR    = "data/HAM10000_images_clahe/"
+IMAGE_DIR    = "data/HAM10000_images_hair_removed"
 SPLIT_DIR    = "data/"
 OUTPUT_DIR   = "outputs/"
 PLOT_DIR     = "src/03_deep_learning/plots/"
@@ -30,7 +30,7 @@ NUM_WORKERS  = 0          # set to 0 on Mac to avoid multiprocessing issues
 BATCH_SIZE_LADDER = [32, 16, 8, 4]
 
 # Week 5 — full training
-NUM_EPOCHS       = 10
+NUM_EPOCHS       = 20
 BATCH_SIZE       = 16         # reduce to 8 if MPS crashes
 LR_HEAD          = 1e-3       # LR while backbone is frozen
 LR_FINETUNE      = 1e-5       # LR after backbone is unfrozen

@@ -7,7 +7,7 @@ import torch.optim as optim
 from torchvision import models
 from torch.utils.tensorboard import SummaryWriter
 
-from pytorch_dataloader.py import build_dataloaders
+from pytorch_dataloader.py import build_loaders
 
 
 #settings
@@ -25,7 +25,7 @@ device=torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
 
 #load data
-train_loader, val_loader, test_loader=build_dataloaders(batch_size=BATCH_SIZE, num_workers=NUM_WORKERS)
+train_loader, val_loader, test_loader=build_loaders(batch_size=BATCH_SIZE, num_workers=NUM_WORKERS)
 print("DataLoaders created.")
 print("Train batches:", len(train_loader))
 print("Val batches:", len(val_loader))
