@@ -1,6 +1,7 @@
 import os
 import cv2
 import numpy as np
+from display_images import display_images
 
 #paths
 INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_clahe")
@@ -79,3 +80,4 @@ print("\nDone.")
 print(f"Processed: {total} images")
 print(f"Skipped:   {skipped} images")
 print(f"Saved to:  {OUTPUT_DIR}")
+display_images(OUTPUT_DIR, "color_normalization")

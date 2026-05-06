@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import random
 import matplotlib.pyplot as plt
+from display_images import display_images
 
 
 #paths
@@ -92,7 +93,7 @@ for fname in files:
         print(f"Skipping unreadable file: {fname}")
         continue
 
-    cleaned, mask=remove_hair(image)
+    cleaned=remove_hair(image)
     cv2.imwrite(dst_path, cleaned)
 
     total+=1
@@ -104,3 +105,4 @@ print("\nDone.")
 print(f"Processed: {total} images")
 print(f"Skipped:   {skipped} images")
 print(f"Saved to:  {OUTPUT_DIR}")
+display_images(OUTPUT_DIR, "hair_remover")

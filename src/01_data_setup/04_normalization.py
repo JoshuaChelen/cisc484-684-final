@@ -1,6 +1,7 @@
 import os
 import numpy as np
 from PIL import Image
+from display_images import display_images
 
 #create paths
 INPUT_DIR=os.path.join("..", "..", "data", "HAM10000_images_hair_removed")
@@ -38,3 +39,4 @@ print("\nDone.")
 print(f"Normalized: {total} images")
 print(f"Skipped:    {skipped} images (already existed)")
 print(f"Saved to:   {OUTPUT_DIR}")
+display_images(OUTPUT_DIR, "normalization")
