@@ -2,6 +2,7 @@ import os
 import cv2
 import numpy as np
 from PIL import Image
+from display_images import display_images
 
 #paths
 INPUT_DIR  = os.path.join("..", "..", "data", "HAM10000_images_resized")
@@ -53,3 +54,4 @@ print("\nDone.")
 print(f"Processed: {total} images")
 print(f"Skipped:   {skipped} images")
 print(f"Saved to:  {OUTPUT_DIR}")
+display_images(OUTPUT_DIR, "clahe")
