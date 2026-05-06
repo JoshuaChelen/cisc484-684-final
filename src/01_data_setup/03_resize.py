@@ -12,6 +12,7 @@ output:
 
 import os
 from PIL import Image
+from display_images import display_images
 
 # ── Paths (relative to src/) ───────────────────────────────────────────────
 IMG_DIR_1   = os.path.join("..", "..", "data", "HAM10000_images_part_1")
@@ -50,3 +51,4 @@ print(f"\nDone.")
 print(f"Resized:  {total} images")
 print(f"Skipped:  {skipped} images (already existed)")
 print(f"Saved to: {OUTPUT_DIR}")
+display_images(OUTPUT_DIR, "resized")
